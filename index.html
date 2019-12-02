@@ -7,8 +7,54 @@
     <title>ToDo List</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .notification-alert {
+            display: none;
+        }
+        .notification-alert.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
+    <section class="tasks-wrap">
+        <div class="container">
+
+            <div class="alert notification-alert"></div>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    Add ToDo
+                </div>
+                <div class="card-body">
+                    <form name="addTodoItem">
+                        <div class="form-group">
+                            <label for="todoText">Text</label>
+                            <input type="text" class="form-control" id="todoText">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-3 list-card">
+                <div class="card-header">
+                    Task List
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+
+                    </ul>
+                </div>
+            </div>
+
+            <button class="btn btn-primary">Clear List</button>
+
+        </div>
+    </section>
     
+    <script src="index.js"></script>
+
 </body>
 </html>

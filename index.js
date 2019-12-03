@@ -71,6 +71,12 @@ function deleteListItem(id) {
     }
     // update to LocalStorage
     localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    message({
+        text: ' Task deleted success',
+        cssClass: 'alert-warning',
+        timeout: 4000
+    })
 }
 
 function editListItem(id, newValue) {
@@ -82,4 +88,20 @@ function editListItem(id, newValue) {
     }
     // update to LocalStorage
     localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    message({
+        text: ' Task updated success',
+        cssClass: 'alert-success',
+        timeout: 4000
+    });
+}
+
+function message(settings) {
+    notificationAlert.classList.add(settings.cssClass);
+    notificationAlert.textContent = settings.text;
+    notificationAlert.classList.add('show');
+
+    setTimeout(() => {
+        notificationAlert.classList.remove('show');
+    }, settings.timeout);
 }

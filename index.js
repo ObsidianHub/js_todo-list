@@ -105,3 +105,27 @@ function message(settings) {
         notificationAlert.classList.remove('show');
     }, settings.timeout);
 }
+
+ul.addEventListener('click', function(e) {
+    if (e.target.classList.contains('delete-item')) {
+        let parent = e.target.closest('li');
+        let id = parent.dataset.id;
+        // delete list item
+        deleteListItem(id);
+        parent.remove();
+    } else if (e.target.classList.contains('edit-item')) {
+        e.target.classList.toggle('fa-save');
+        let id = e.target.closest('li').dataset.id;
+        let span = e.target.closest('li').querySelector('span');
+
+        if (e.target.classList.contains('fa-save')) {
+            span.setAttribute('contenteditable', true);
+            span.focus();
+        } else {
+            span.setAttribute('contenteditable', false);
+            span.blur();
+            editListItem(id, span.textContent);
+        }
+    }
+})
+

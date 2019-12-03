@@ -62,3 +62,24 @@ function addList(list) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+function deleteListItem(id) {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === id) {
+            tasks.splice(i, 1);
+            break;
+        }
+    }
+    // update to LocalStorage
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function editListItem(id, newValue) {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === id) {
+            tasks.text = newValue;
+            break;
+        }
+    }
+    // update to LocalStorage
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}

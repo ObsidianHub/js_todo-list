@@ -129,3 +129,22 @@ ul.addEventListener('click', function(e) {
     }
 })
 
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!inputText.value) {
+        // show error
+        inputText.classList.add('is-invalid');
+    } else {
+        inputText.classList.remove('is-invalid');
+        addList(inputText.value);
+        form.reset();
+    }
+})
+
+inputText.addEventListener('keyup', function() {
+    if (inputText.value) {
+        inputText.classList.remove('is-invalid');
+    }
+})
+
+generateList(tasks);

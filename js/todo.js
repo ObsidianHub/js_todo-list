@@ -16,3 +16,12 @@ function generateId() {
 
   return id;
 }
+
+function generateList(tasksArray) {
+  clearList();
+
+  for (let i = 0; i < tasksArray.length; i++) {
+    let li = listTemplate(tasksArray[i]);
+    ul.appendChild(li);
+  }
+}

@@ -33,12 +33,20 @@ function listTemplate(task) {
   li.setAttribute("data-id", task.id);
   let span = document.createElement("span");
   span.textContent = task.text;
+
   // create tag i fa-trash-alt
   let iDelete = document.createElement("i");
   iDelete.className = "fas fa-trash-alt delete-item ml-4";
   // create tag i fa-edit-alt
   let iEdit = document.createElement("i");
   iEdit.className = "fas fa-edit-alt edit-item ml-auto";
+
+  // append delete and edit icon to list item
+  li.appendChild(span);
+  li.appendChild(iEdit);
+  li.appendChild(iDelete);
+
+  return li;
 }
 
 function clearList() {

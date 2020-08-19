@@ -64,4 +64,14 @@ function addList(list) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function message(settings) {
+  notificationAlert.classList.add(settings.cssClass);
+  notificationAlert.textContent = settings.text;
+  notificationAlert.classList.add("show");
+
+  setTimeout(() => {
+    notificationAlert.classList.remove("show");
+  }, settings.timeout);
+}
+
 generateList(tasks);

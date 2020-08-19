@@ -52,3 +52,5 @@ function listTemplate(task) {
 function clearList() {
   ul.innerHTML = "";
 }
+
+generateList(tasks);

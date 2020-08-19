@@ -53,4 +53,15 @@ function clearList() {
   ul.innerHTML = "";
 }
 
+function addList(list) {
+  let newTask = {
+    id: generateId(),
+    text: list,
+  };
+  tasks.unshift(newTask);
+  ul.insertAdjacentElement("afterbegin", listTemplate(newTask));
+  // add to LocalStorage
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 generateList(tasks);

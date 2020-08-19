@@ -74,4 +74,12 @@ function message(settings) {
   }, settings.timeout);
 }
 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (!inputText.value) {
+    // show error
+    inputText.classList.add("is-invalid");
+  }
+});
+
 generateList(tasks);

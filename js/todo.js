@@ -26,6 +26,15 @@ function generateList(tasksArray) {
   }
 }
 
+function listTemplate(task) {
+  // create list item
+  let li = document.createElement("li");
+  li.className = "list-group-item d-flex align-items-center";
+  li.setAttribute("data-id", task.id);
+  let span = document.createElement("span");
+  span.textContent = task.text;
+}
+
 function clearList() {
   ul.innerHTML = "";
 }

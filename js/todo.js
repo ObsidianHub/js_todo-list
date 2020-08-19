@@ -25,3 +25,7 @@ function generateList(tasksArray) {
     ul.appendChild(li);
   }
 }
+
+function clearList() {
+  ul.innerHTML = "";
+}

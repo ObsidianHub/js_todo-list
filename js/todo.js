@@ -115,6 +115,10 @@ ul.addEventListener("click", function (e) {
     // delete list item
     deleteListItem(id);
     parent.remove();
+  } else if (e.target.classList.contains("edit-item")) {
+    e.target.classList.toggle("fa-save");
+    let id = e.target.closest("li").dataset.id;
+    let span = e.target.closest("li").querySelector("span");
   }
 });
 

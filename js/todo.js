@@ -81,6 +81,15 @@ function deleteListItem(id) {
   });
 }
 
+function editListItem(id, newValue) {
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].id === id) {
+      tasks.text = newValue;
+      break;
+    }
+  }
+}
+
 function message(settings) {
   notificationAlert.classList.add(settings.cssClass);
   notificationAlert.textContent = settings.text;

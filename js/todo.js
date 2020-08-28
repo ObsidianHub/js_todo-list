@@ -119,6 +119,15 @@ ul.addEventListener("click", function (e) {
     e.target.classList.toggle("fa-save");
     let id = e.target.closest("li").dataset.id;
     let span = e.target.closest("li").querySelector("span");
+
+    if (e.target.classList.contains("fa-save")) {
+      span.setAttribute("contenteditable", true);
+      span.focus();
+    } else {
+      span.setAttribute("contenteditable", false);
+      span.blur();
+      editListItem(id, span.textContent);
+    }
   }
 });
 

@@ -71,6 +71,8 @@ function deleteListItem(id) {
       break;
     }
   }
+  // update to LocalStorage
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function message(settings) {

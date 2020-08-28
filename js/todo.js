@@ -108,6 +108,16 @@ function message(settings) {
   }, settings.timeout);
 }
 
+ul.addEventListener("click", function (e) {
+  if (e.target.classList.contains("delete-item")) {
+    let parent = e.target.closest("li");
+    let id = parent.dataset.id;
+    // delete list item
+    deleteListItem(id);
+    parent.remove();
+  }
+});
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!inputText.value) {

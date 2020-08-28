@@ -88,6 +88,14 @@ function editListItem(id, newValue) {
       break;
     }
   }
+  // update to LocalStorage
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  message({
+    text: " Task updated success",
+    cssClass: "alert-success",
+    timeout: 4000,
+  });
 }
 
 function message(settings) {

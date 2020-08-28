@@ -73,6 +73,12 @@ function deleteListItem(id) {
   }
   // update to LocalStorage
   localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  message({
+    text: " Task deleted success",
+    cssClass: "alert-warning",
+    timeout: 4000,
+  });
 }
 
 function message(settings) {

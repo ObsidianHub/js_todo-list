@@ -39,7 +39,7 @@ function listTemplate(task) {
   iDelete.className = "fas fa-trash-alt delete-item ml-4";
   // create tag i fa-edit-alt
   let iEdit = document.createElement("i");
-  iEdit.className = "fas fa-edit-alt edit-item ml-auto";
+  iEdit.className = "fas fa-edit edit-item ml-auto";
 
   // append delete and edit icon to list item
   li.appendChild(span);
